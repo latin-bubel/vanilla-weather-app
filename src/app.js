@@ -49,7 +49,7 @@ function displayTemperature(response) {
 
 function getForecast(coordinates) {
   let apiKey = "44ca27512f68959c8cf99598ad706a66";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&nits=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -121,7 +121,7 @@ function displayForecast(response) {
         `
       <div class="col-2">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
- 
+
  <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
